@@ -2,11 +2,9 @@ import base64
 from datetime import datetime, timedelta
 from typing import Optional
 
-import requests
 # pip3 install PyJWT==1.6.4
 import jwt
 from cryptography.hazmat.primitives import serialization
-from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.backends import default_backend
 
 class JwtGenerator:
