@@ -35,7 +35,7 @@ Python版本的SDK，用于生成Orchsym API Gateway JWT 认证所需的token。
 - app_code：对应编辑app页APPCode字段
 - client_id：对应编辑app页Client Id字段
 - private_key：对应编辑app页privateKey字段
-- token_period：对应编辑app页Token有效期，单位是秒，建议比创建app时指定的token有效期要短一些，具体原因参考代码中的注释。
+- token_period：对应编辑app页Token有效期，单位是秒，建议比创建app时指定的token有效期要短一些，比如Token有效期是10min，这里就设置为8min或者5min，如果有报错，则需要核实双方的时间一致性。网关会判断，如果Token有效期是5min，但你生成token时，设置的有效期是6min，则永远无法通过校验，因为网关不允许客户端生成的token有效期比app的token有效期长。
 - url: 发布的实际接口调用地址，默认是get方法，如果是post调用，需自行修改代码。
 
 ### HS256加密方式
